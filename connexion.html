@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion Utilisateur</title>
+    <link rel="stylesheet" href="connexion.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/Logo RS .png" alt="Logo Aidéduc">
+            <span>Aidéduc</span>
+        </div>
+    </header>
+
+  <div class="form-container">
+
+    <div class="form-box">
+        <h2>se conecter </h2>
+        <form action="/verifier-email" method="POST">
+            <label for="email_connexion">Adresse email :</label>
+            <input type="email" id="email_connexion" name="utilisateur_email" required>
+
+            <label for="mot_de_passe_connexion">Mot de passe :</label>
+            <input type="password" id="mot_de_passe_connexion" name="utilisateur_password" required>
+
+            <button type="submit">création réservation</button>
+        </form>
+    </div>
+
+    <div class="form-box">
+        <h2>Création du compte</h2>
+        <form action="/ajouter" method="POST">
+            <label for="utilisateur_nom">Nom :</label>
+            <input type="text" id="utilisateur_nom" name="utilisateur_nom" required>
+
+            <label for="utilisateur_email">Adresse email :</label>
+            <input type="email" id="utilisateur_email" name="utilisateur_email" required>
+
+            <label for="utilisateur_telephone">Téléphone :</label>
+            <input type="tel" id="utilisateur_telephone" name="utilisateur_telephone" required>
+
+            <label for="utilisateur_password">Mot de passe :</label>
+            <input type="password" id="utilisateur_password" name="utilisateur_password" required>
+
+            <label for="confirmation_passwd">Confirmer :</label>
+            <input type="password" id="confirmation_passwd" name="confirmation_passwd" required>
+
+            <button type="submit">Création du compte</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

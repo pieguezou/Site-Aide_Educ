@@ -1,0 +1,137 @@
+/* Base */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Centrage total de la page */
+main {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+/* Carte centrale */
+.card {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+}
+
+/* Titre */
+h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Email affiché */
+#email-display {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* Formulaire */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Labels */
+label {
+  align-self: flex-start;
+  font-weight: bold;
+  font-size: 14px;
+  width: 85%;
+}
+
+/* Champs */
+input,
+select {
+  width: 85%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Focus champs */
+input:focus,
+select:focus {
+  border-color: #de5935;
+  box-shadow: 0 0 0 3px rgba(222, 89, 53, 0.18);
+}
+
+/* Bouton */
+button {
+  background: #de5935;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 85%;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #c94e2f;
+}
+
+/* Separator */
+hr {
+  border: none;
+  height: 1px;
+  background: #e6e6e6;
+  margin: 30px 0;
+}
+
+/* Liste des rendez-vous */
+#liste-reservations {
+  margin-top: 15px;
+}
+
+/* Liste */
+#liste-reservations ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Item RDV */
+#liste-reservations li {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+
+  .card {
+    padding: 20px;
+  }
+
+  input,
+  select,
+  button {
+    width: 100%;
+  }
+
+  
+}

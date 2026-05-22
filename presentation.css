@@ -1,0 +1,276 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background-color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 24px;
+  font-weight: bold;
+  color: #de5935;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Espace entre les images */
+  flex-wrap: wrap; /* Permet le retour à la ligne sur mobile */
+  padding: 20px;
+}
+
+
+.presentation {
+  flex: 2 1 400px;
+  background: rgba(255,255,255,0.9);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.presentation h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.presentation p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.btn {
+  background: #de5935;
+  color: white;
+  padding: 52px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  float: right;
+}
+
+
+
+.btn:hover {
+  background: #c94e2f;
+}
+
+
+
+
+.banner {
+  display: block;        
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;       
+  height: auto;       
+  width: 40%;           
+  object-fit: cover;    
+}
+
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background-color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 24px;
+  font-weight: bold;
+  color: #de5935;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.side-image {
+  flex: 1 1 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.presentation {
+  flex: 2 1 400px;
+  background: rgba(255,255,255,0.9);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.presentation h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.presentation p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background: #de5935;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #c94e2f;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espace entre les images */
+  flex-wrap: wrap; /* Permet le retour à la ligne sur mobile */
+  padding: 40px 20px;
+}
+
+.gallery-item {
+  flex: 1 1 250px; /* Taille flexible mais minimum 250px */
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: white;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+/* Responsive : les images reviennent à gauche sur petits écrans */
+@media (max-width: 768px) {
+  .gallery-item {
+    margin-left: 0;
+    width: 90%;
+    max-width: 300px;
+    margin: 10px auto;
+  }
+}
+
+side-image left{
+    height: 5000px;
+    width: 100px; 
+}
+

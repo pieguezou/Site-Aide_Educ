@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Réservation</title>
+<link rel="stylesheet" href="reservation.css" />
+</head>
+
+<body>
+
+<h2>Réservation RDV</h2>
+
+<p id="email-display"></p>
+
+<form action="/reserver" method="POST">
+
+<input type="hidden" id="utilisateur_email" name="utilisateur_email">
+<input type="hidden" id="utilisateur_telephone" name="utilisateur_telephone">
+
+    <p>
+        <label>Date :</label><br>
+        <input type="date" name="date_reservation" required>
+    </p>
+
+    <p>
+        <label>Heure :</label><br>
+        <input type="time" name="heure_reservation" required>
+    </p>
+
+<p>
+    <label>Motif :</label><br>
+    <select name="type_prestation" required>
+        <option value="">-- Sélectionnez un motif --</option>
+        <option value="Accompagnement handicap">Accompagnement handicap</option>
+        <option value="Accompagnement parent">Accompagnement parent</option>
+        <option value="Accompagnement parents enfant">Accompagnement parents enfant</option>
+    </select>
+</p>
+
+   <p>
+    <label>Commentaire :</label><br>
+    <textarea name="commentaire_reservation" rows="5" cols="50" required></textarea>
+</p>
+
+
+    <p>
+        <button type="submit">Confirmer</button>
+    </p>
+
+</form>
+
+<hr>
+
+<h3>Mes demandes de rendez-vous</h3>
+<div id="liste-reservations">
+    Chargement...
+</div>
+
+<script>
+  // Récupère l'email depuis le serveur via une API ou variable globale
+  fetch('/session-email')
+    .then(res => res.json())
+    .then(data => {
+      if (!data.email) {
+        window.location.href = '/'; // pas connecté -> redirige
+      } else {
+        document.getElementById('email-display').innerText = "Adresse email : " + data.email + ", Téléphone : " + data.telephone;
+        document.getElementById('telephone-display').innerText += "Téléphone : " + data.telephone;
+        //document.getElementById('adresse_mel').value = data.email;
+        document.getElementById('utilisateur_email').value = data.email;
+        document.getElementById('utilisateur_telephone').value = data.telephone || "";
+      }
+    });
+</script>
+
+<script>
+function chargerReservations() {
+  fetch('/mes-reservations')
+    .then(res => {
+      if (res.status === 401) {
+        window.location.href = '/';
+      }
+      return res.json();
+    })
+    .then(data => {
+      const container = document.getElementById('liste-reservations');
+
+      if (!data || data.length === 0) {
+        container.innerHTML = "<p>Aucun rendez-vous enregistré.</p>";
+        return;
+      }
+
+      let html = "<ul>";
+      data.forEach(rdv => {
+        html += `
+          <li>
+            📅 ${rdv.date_heure_rdv} 
+            - ${rdv.type_prestation}
+            - ${rdv.commentaire_reservation}
+          </li>`;
+      });
+      html += "</ul>";
+
+      container.innerHTML = html;
+    })
+    .catch(() => {
+      document.getElementById('liste-reservations').innerHTML =
+        "Erreur lors du chargement.";
+    });
+}
+
+// Charger au démarrage
+chargerReservations();
+</script>
+
+</body>
+</html>
